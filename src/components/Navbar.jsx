@@ -10,6 +10,7 @@ import {
   styled,
   Toolbar,
   Typography,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -45,9 +46,10 @@ const UserBox = styled(Box)(({ theme }) => ({
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
   return (
-    <AppBar position="sticky">
-      <StyledToolbar>
+    <AppBar position="sticky" color="primary" enableColorOnDark>
+      <StyledToolbar >
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           Dev
         </Typography>
